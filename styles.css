@@ -1,0 +1,11 @@
+img{
+  width:400px;
+  display: block;
+  margin:20px;
+}
+
+.animalPic{
+  border:2px solid gray;
+  text-align: center;
+  margin: 10px;
+}

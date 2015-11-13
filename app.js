@@ -27,14 +27,16 @@ var picPage = {
             success: function(data) {
                 var redditsArray = data.data.children;
                 _.each(redditsArray, function(post) {
-                    $(".pics").append(
-                        "<div class='animalPic'><a target='_blank' href='http://reddit.com"
-                        + post.data.permalink
-                        + "'><img src='"
-                        + post.data.thumbnail
-                        + "'></a><h2>"
-                        + post.data.title
-                        + "</h2></div>");
+                    if (post.data.preview){
+                      $(".pics").append(
+                          "<div class='animalPic'><a target='_blank' href='http://reddit.com"
+                          + post.data.permalink
+                          + "'><img src='"
+                          + post.data.preview.images[0].source.url
+                          + "'></a><h2>"
+                          + post.data.title
+                          + "</h2></div>");
+                  }
                 })
             }
         });
